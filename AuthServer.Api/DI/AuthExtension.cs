@@ -28,7 +28,7 @@ namespace AuthServer.Api.DI
                 .AddCore(options =>
                 {
                     options.UseEntityFrameworkCore()
-                           .UseDbContext<AuthServer.Infrastructure.Context.AuthDbContext>();
+                           .UseDbContext<AuthDbContext>();
                 })
                 .AddServer(options =>
                 {
