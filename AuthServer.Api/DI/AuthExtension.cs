@@ -37,8 +37,10 @@ namespace AuthServer.Api.DI
                            .SetUserInfoEndpointUris("/connect/userinfo");
                     options.AllowPasswordFlow()
                            .AllowAuthorizationCodeFlow()
-                           .AllowRefreshTokenFlow();
-                    options.RegisterScopes("email", "profile", "roles");
+                           .AllowRefreshTokenFlow()
+                           .AllowClientCredentialsFlow();
+                           
+                    options.RegisterScopes("email", "profile", "roles", "api");
                     options.AddDevelopmentEncryptionCertificate()
                            .AddDevelopmentSigningCertificate();
                     options.UseAspNetCore()
