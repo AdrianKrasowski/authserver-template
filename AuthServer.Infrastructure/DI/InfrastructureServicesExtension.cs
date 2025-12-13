@@ -17,6 +17,8 @@ namespace AuthServer.Infrastructure.DI
                 opt.UseSqlServer(cs);
             });
 
+            services.AddHostedService<Seeding.OpenIddictSeeder>();
+
             return services;
         }
     }
