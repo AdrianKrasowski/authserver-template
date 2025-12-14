@@ -1,0 +1,17 @@
+services:
+    sqlServer:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        container-name: auth-sqlserver
+        environment:
+            ACCEPT_EULA: "Y"
+            MSSQL_SQ_PASSWORD: "MyStrong!Passw0rd1"
+        ports:
+            - "14333:1433"
+        volumes:
+            - auth_sql_data:/var/opt/mssql
+        healthcheck:
+            test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -Q 'SELECT 1' -C || exit 1"]
+            interval: 10s
+            timeout: 5s
+            retries: 10
+            start_period: 20s
