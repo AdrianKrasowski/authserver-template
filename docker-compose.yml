@@ -27,7 +27,7 @@ services:
         environment:
             ASPNETCORE_URLS: "https://+:8080"
             ASPNETCORE_ENVIRONMENY: "Development"
-            ConnectionStrings_AuthServerDb: "Server=sqlserver,1433;Database=AuthDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;Encrypt=True;"
+            ConnectionStrings_AuthServerDb: "Server=sqlserver,1433;Database=AuthDb;User Id=sa;Password=MyStrong!Passw0rd1;TrustServerCertificate=True;Encrypt=True;"
         ports:
             - "8088:8080"
         restart: unless-stopped
